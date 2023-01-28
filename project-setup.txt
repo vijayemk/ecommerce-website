@@ -1,0 +1,64 @@
+LARAVAL INSTALLATION
+    1.command:  sudo apt install php8.1-cgi php8.1-cli
+
+    2.command : sudo apt install composer
+
+    3.command : sudo apt install phpunit
+
+    4.command : sudo apt install php8.1-curl
+
+    5.Go to project installation file directory
+
+    Command: cd  project/project_directory
+
+    6.commad : composer create-project laravel/laravel laraval-project
+
+    laraval-project - project folder name
+
+    7.command : cd /laraval-project
+    Command: sudo php artisan serve
+
+    “sudo php artisan serve” command used to run the laraval project.
+
+
+    Go to browser .paste the IP address
+
+MYSQL INSTALLATION
+    1.Mysql installation
+        1.sudo apt install mysql-server
+
+        2.sudo systemctl start mysql.service
+
+        3.sudo mysql_secure_installation
+
+        4.sudo mysql
+
+        5.mysql -u root -p
+    2.create new user and grand privillages on the user
+
+            1.CREATE USER 'sammy'@'localhost' IDENTIFIED BY 'vijay@123';   //username:saamy   password:vijay@122
+
+            2.GRANT ALL PRIVILEGES ON *.* TO 'sammy'@'localhost' WITH GRANT OPTION;
+
+            3.FLUSH PRIVILEGES;
+
+            Error handling:
+            error 1819 (hy000): your password does not satisfy the current policy requirements
+
+            sol:
+            SHOW VARIABLES LIKE 'validate_password%';
+                    +--------------------------------------+-------+
+                    | Variable_name                        | Value |
+                    +--------------------------------------+-------+
+                    | validate_password.check_user_name    | ON    |
+                    | validate_password.dictionary_file    |       |
+                    | validate_password.length             | 6     |
+                    | validate_password.mixed_case_count   | 1     |
+                    | validate_password.number_count       | 1     |
+                    | validate_password.policy             | LOW   |
+                    | validate_password.special_char_count | 1     |
+                    +--------------------------------------+-------+
+            Above mentioned error occured on your password satisfy the above requirment,if you want change values like validate_password.length change 8 command like 'SET GLOBAL validate_password.length = 8;'
+
+
+
